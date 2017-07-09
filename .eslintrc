@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  // Ajoute quelques règles par défaut
+  "rules": {
+    "quotes": [
+      2,
+      "single"
+    ],
+    // On modifie cette règle car on préfère les single quotes
+    "import/export": 2,
+    "no-console": "off",
+    "symbol-description": "off"
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "env": {
+    "node": true
+  },
+  "globals": {
+    "Symbol": true,
+    "describe": true,
+    "it": true
+  }
+}

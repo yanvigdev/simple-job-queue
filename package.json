@@ -1,0 +1,35 @@
+{
+  "name": "simple-job-queue",
+  "version": "1.0.0",
+  "description": "Gestionnaire de file d'attente d’exécution de fonction JS.",
+  "main": "simple-job-queue.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/*.js",
+    "lint": "./node_modules/eslint/bin/eslint.js --cache --fix ./simple-job-queue"
+  },
+  "keywords": [
+    "job",
+    "queue"
+  ],
+  "author": "Yann Vignolet",
+  "license": "ISC",
+  "dependencies": {
+    "events": "^1.1.1",
+    "underscore": "^1.8.3",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "mocha": "^3.4.2",
+    "should": "^11.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yanvigdev/simple-job-queue.git"
+  }
+}
