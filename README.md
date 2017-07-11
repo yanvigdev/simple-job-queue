@@ -42,7 +42,7 @@ let SimpleJobQueue = require('../simple-job-queue');
 let jobQueue = new SimpleJobQueue(6);
 ```
 
-#### Avec coune configuration de nombre de thread alloué à la file d'attend et le mode verbose activé
+#### Avec une configuration de nombre de thread alloué à la file d'attend et le mode verbose activé
 
 *Par défaut le mode verbose est à false*
 
@@ -142,6 +142,32 @@ La **queue** exécutera toujours le ou les **jobs** de sa liste par rapport à s
 
 Donc si une **queue** à qui on a alloué 5 threads a 3 **jobs**, le premier de 3 threads le second de 3 threads et le dernier de 1 thread. Le premier job et le dernier seront exécuté en même temps alors que le second ne le sera qu’après que le premier est fini.
 
+```javascript
+let value = '',
+jobQueue = new SimpleJobQueue();
+jobQueue.on(SimpleJobQueue.EVENT.queue.finished, function () {
+    console.log(value); //value est égale à abc
+});
+jobQueue.addJob(function (nextJob) {
+    setTimeout(function () {
+        value = value + 'a';
+        nextJob();
+    }, 100);
+}, 3);
+jobQueue.addJob(function (nextJob) {
+    setTimeout(function () {
+        value = value + 'c';
+        nextJob();
+    }, 100);
+}, 3);
+jobQueue.addJob(function (nextJob) {
+    setTimeout(function () {
+        value = value + 'b';
+        //ici value est égale à "ab"
+        nextJob();
+    }, 100);
+}, 1);
+```
 
 ## LICENCE
 
