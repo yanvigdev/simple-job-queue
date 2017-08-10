@@ -29,7 +29,7 @@ npm install simple-job-queue --save
 #### Par défaut
 
 ```javascript
-let SimpleJobQueue = require('../simple-job-queue');
+let SimpleJobQueue = require('simple-job-queue');
 let jobQueue = new SimpleJobQueue();
 ```
 
@@ -38,7 +38,7 @@ let jobQueue = new SimpleJobQueue();
 *Par défaut le nombre de thread est de 5*
 
 ```javascript
-let SimpleJobQueue = require('../simple-job-queue');
+let SimpleJobQueue = require('simple-job-queue');
 let jobQueue = new SimpleJobQueue(6);
 ```
 
@@ -47,7 +47,7 @@ let jobQueue = new SimpleJobQueue(6);
 *Par défaut le mode verbose est à false*
 
 ```javascript
-let SimpleJobQueue = require('../simple-job-queue');
+let SimpleJobQueue = require('simple-job-queue');
 let jobQueue = new SimpleJobQueue(6, true);
 ```
 
