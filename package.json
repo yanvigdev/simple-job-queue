@@ -1,6 +1,6 @@
 {
   "name": "simple-job-queue",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Gestionnaire de file d'attente d’exécution de fonction JS.",
   "main": "simple-job-queue.js",
   "directories": {
